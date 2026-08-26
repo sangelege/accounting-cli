@@ -46,7 +46,7 @@ while True:
         total_in=0
         total_out =0
         for i in range(len(amounts)):
-            if types=="收入":
+            if types[i]=="收入":
                 total_in +=amounts[i]
             else :
                 total_out +=amounts[i]
