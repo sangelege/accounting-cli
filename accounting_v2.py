@@ -33,18 +33,18 @@ def parse_amount(text):
 def add_record(records):
     while True:
         rtype = input("类型（收入/支出）：").strip()
-        if rtype=="收入"or"支出":
+        if rtype=="收入" or rtype=="支出":
             break
         print("类型不存在")
 
     while True:
-        amount =parse_amount 
+        amount =parse_amount(input("输入金额：")) 
         if amount >0:
             break
 
     note =input("输入备注：")
 
-    records.append(records)
+    records.append({"type": rtype, "amount": amount, "note": note})
 
 
 def show_records(records):
@@ -53,7 +53,7 @@ def show_records(records):
     else:
         for i in range(len(records)):
             print("序号"   "类型"  "金额"  "备注")
-            print(i+1,records[i].rtype,records[i].amount,records[i].note)
+            print(i+1,records[i]["rtype"],records[i]["amount"],records[i]["note"])
 
 def show_summary(records):
     in_sum=0
