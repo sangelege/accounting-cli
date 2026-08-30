@@ -1,0 +1,41 @@
+=== 记账程序 v2 ===
+
+命令: add | list | summary | exit
+> add
+类型（收入/支出）：收入
+输入金额：500
+输入备注：奖学金
+
+命令: add | list | summary | exit
+> add
+类型（收入/支出）：支出
+输入金额：32.5
+输入备注：午饭
+
+命令: add | list | summary | exit
+> add
+类型（收入/支出）：支出
+输入金额：abc
+输入数字错误
+输入金额：-10
+金额错误
+输入金额：20
+输入备注：零食
+
+命令: add | list | summary | exit
+> list
+序号类型金额备注
+1 收入 500.0 奖学金
+2 支出 32.5 午饭
+3 支出 20.0 零食
+
+命令: add | list | summary | exit
+> summary
+总收入： 500.0
+总支出： 52.5
+结余：  447.5
+
+命令: add | list | summary | exit
+> exit
+已保存 3 条记录，再见。
+(base) PS C:\Users\32623\accounting-cli> 

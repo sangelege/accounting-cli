@@ -39,7 +39,7 @@ def add_record(records):
 
     while True:
         amount =parse_amount(input("输入金额：")) 
-        if amount is None:
+        if amount is  not None:
             break
 
     note =input("输入备注：")
