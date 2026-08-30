@@ -39,7 +39,7 @@ def add_record(records):
 
     while True:
         amount =parse_amount(input("输入金额：")) 
-        if amount >0:
+        if amount is None:
             break
 
     note =input("输入备注：")
@@ -51,19 +51,20 @@ def show_records(records):
     if len(records)==0:
         print ("还没有记录，先add一笔")
     else:
+        print("序号"   "类型"  "金额"  "备注")
         for i in range(len(records)):
-            print("序号"   "类型"  "金额"  "备注")
-            print(i+1,records[i]["rtype"],records[i]["amount"],records[i]["note"])
+            
+            print(i+1,records[i]["type"],records[i]["amount"],records[i]["note"])
 
 def show_summary(records):
     in_sum=0
     out_sum=0
 
     for i in range(len(records)):
-        if records[i].rtype=="收入":
-            in_sum+=records[i].amount
+        if records[i]['type']=="收入":
+            in_sum+=records[i]['amount']
         else:
-            out_sum+=records[i].amount
+            out_sum+=records[i]['amount']
     print("总收入：" ,in_sum)
     print("总支出：" ,out_sum)
     print("结余： " ,in_sum-out_sum)
