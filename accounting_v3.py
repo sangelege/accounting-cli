@@ -21,8 +21,18 @@ class Ledger :
         return self.transactions.copy()
 
     def summary(self):
-         return{
-              "income":0.0,
-              "expence":0.0,
-              "balance":0.0,
-         }
+        income = 0.0
+        expense = 0.0
+
+        for transaction in self.transactions:
+            if transaction.type == "收入":
+                income += transaction.amount
+            elif transaction.type == "支出":
+                expense += transaction.amount
+
+        return {
+            "income": income,
+            "expense": expense,
+            "balance": income - expense,
+        }
+

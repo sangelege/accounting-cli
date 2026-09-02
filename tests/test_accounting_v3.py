@@ -23,7 +23,7 @@ def test_empty_ledger_summary():
     ledger = accounting_v3.Ledger()
     assert ledger.summary() =={
         "income":0.0,
-        "expence":0.0,
+        "expense":0.0,
         "balance":0.0,
     }
 
@@ -42,6 +42,11 @@ def test_summary_income_expense_balance():
 
     ledger.add(accounting_v3.Transaction("收入", 500, "工资"))
     ledger.add(accounting_v3.Transaction("支出", 52.5, "午饭"))
+    assert ledger.summary() == {
+        "income": 500.0,
+        "expense": 52.5,
+        "balance": 447.5,
+    }
 
     
 def test_reject_non_numeric_amount():
